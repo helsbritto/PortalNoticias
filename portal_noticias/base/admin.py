@@ -4,4 +4,7 @@ from base.models import Cadastro
 
 @admin.register(Cadastro)
 class CadastroAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['nome', 'email', 'data']
+    search_fields = ['nome', 'email']
+    list_filter = ['data']
+    
