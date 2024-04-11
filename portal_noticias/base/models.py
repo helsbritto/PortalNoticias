@@ -13,4 +13,17 @@ class Cadastro(models.Model):
         verbose_name_plural = 'Formulários de contatos'
         ordering = ['-data']
     
+class Noticia(models.Model):
+    CATEGORIA_NOTICIAS = (
+        ('PL', 'Política'),
+        ('ECON', 'Economia'),
+        ('ESP', 'Esportes'),
+        ('ENTR', 'Entretenimento'),
+    )
+    titulo = models.CharField(max_length=255)
+    categoria = models.CharField(max_length=20, choices=CATEGORIA_NOTICIAS)
+    imagem = models.ImageField(upload_to='imagens')
+    conteudo = models.TextField()
+    def __str__(self):
+        return self.titulo
 

@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse 
 from base.forms import CadastroForm
 from base.models import Cadastro
+from base.models import Noticia
 
 # Create your views here.
 def inicio(request):
@@ -19,5 +20,5 @@ def cadastro(request):
     }
     return render(request, 'cadastro.html', contexto)
 
-def listaNoticias(request):
-    pass
+def noticia(request):
+    return render(request, 'noticia.html')
