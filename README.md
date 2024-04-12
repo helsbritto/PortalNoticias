@@ -3,4 +3,6 @@
 - [x] Carrossel de Notícias para cada categoria
 - [x] Adicionar Notícias
 - [ ] Possibilidade de Cadastro para editar notícias
-- [ ] Busca de Notícia 
+- [ ] Página com notícia detalhada
+- [ ] Interface de administração
+- [ ] Busca de Notícia por palavras-chave
