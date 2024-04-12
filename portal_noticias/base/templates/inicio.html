@@ -40,23 +40,27 @@
         
         <nav>
             <ul class="nav justify-content-center">
-                <li class="nav-item"><a class="nav-link text-light" href="#">Política</a></li>
-                <li class="nav-item"><a class="nav-link text-light" href="#">Economia</a></li>
-                <li class="nav-item"><a class="nav-link text-light" href="#">Esportes</a></li>
-                <li class="nav-item"><a class="nav-link text-light" href="#">Entretenimento</a></li>
+                <li class="nav-item"><a class="nav-link text-light" href="/politica/">Política</a></li>
+                <li class="nav-item"><a class="nav-link text-light" href="/economia/">Economia</a></li>
+                <li class="nav-item"><a class="nav-link text-light" href="/esportes/">Esportes</a></li>
+                <li class="nav-item"><a class="nav-link text-light" href="/entretenimento/">Entretenimento</a></li>
+                <li class="nav-item"><a class="nav-link text-light" href="/adicionarnoticia/"><b>Cadastrar Notícia</b></a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        {% block principal %}
+        {% block cadastro %}
         <div class="mb-5">
           <a href="cadastro" class="btn btn-primary" style="width: 150px; font-size: 16px; height: 40px;" style="background-color: #ff71b5; border-color: #ff71b5">Cadastre-se</a>
         </div>
         {% endblock %}
+
+        {% block noticiaCadastro %}
+        {% endblock %}
     </main>
 
-    <section class="container my-4">
+    {% comment %} <section class="container my-4">
         <div class="row">
             <div class="col-md-4 mb-4">
                 <div class="card bg-light text-dark">
@@ -70,7 +74,7 @@
             </div>
             <!-- Outros artigos de notícias aqui -->
         </div>
-    </section>
+    </section> {% endcomment %}
 
     <aside class="bg-light p-4">
         <h2 class="text-center">Busca de Notícias</h2>

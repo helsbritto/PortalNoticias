@@ -26,4 +26,7 @@ class Noticia(models.Model):
     conteudo = models.TextField()
     def __str__(self):
         return self.titulo
+    class Meta:
+        verbose_name = 'Notícia'
+        verbose_name_plural = 'Notícias'
 

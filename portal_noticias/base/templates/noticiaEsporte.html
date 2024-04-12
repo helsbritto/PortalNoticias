@@ -42,8 +42,8 @@
         
         <nav>
             <ul class="nav justify-content-center">
+                <li class="nav-item"><a class="nav-link text-light" href="/politica/">Política</a></li>
                 <li class="nav-item"><a class="nav-link text-light" href="/economia/">Economia</a></li>
-                <li class="nav-item"><a class="nav-link text-light" href="/esportes/">Esportes</a></li>
                 <li class="nav-item"><a class="nav-link text-light" href="/entretenimento/">Entretenimento</a></li>
                 <li class="nav-item"><a class="nav-link text-light" href="/adicionarnoticia/"><b>Cadastrar Notícia</b></a></li>
             </ul>
@@ -54,7 +54,7 @@
 <section class="container my-4">
     <div id="noticiasCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-            {% for noticia in noticiaspolitica %}
+            {% for noticia in noticiasesporte %}
             <div class="carousel-item {% if forloop.first %}active{% endif %}">
                 <div class="row justify-content-center"> <!-- Adiciona a classe justify-content-center para centralizar os itens -->
                     <div class="col-md-6 mb-4"> <!-- Define o tamanho da coluna -->
