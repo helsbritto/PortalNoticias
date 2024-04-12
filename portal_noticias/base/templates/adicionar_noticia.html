@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Notícias: Política</title>
+    <title>Adicionar Notícia</title>
     <style>
         .card-title {
             color: #FF71B5;
@@ -23,15 +23,11 @@
     <link href="/static/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Lista de Noticias</h1>
-    <ul>
-    {% for noticia in noticias %}
-        <h3>{{ noticia.titulo }}</h3>
-        <p>{{ noticia.conteudo }}</p>
-        {% if noticia.imagem %}
-            <img src="{{ noticia.imagem.url }}" alt="{{ noticia.imagem.url }}">
-        {% endif %}
-    {% endfor %}
-    </ul>
+    <h2>Adicionar Notícia</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Adicionar Notícia</button>
+    </form>
 </body>
 </html>
