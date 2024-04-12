@@ -20,5 +20,11 @@ def cadastro(request):
     }
     return render(request, 'cadastro.html', contexto)
 
-def noticia(request):
-    return render(request, 'noticia.html')
+def listar_noticias_politica():
+    noticias_politica = Noticia.objects.filter(categoria='PL')
+    return noticias_politica
+
+def noticias_politica(request):
+    # Lista de notícias de política
+    noticias_politica = listar_noticias_politica()
+    return render(request, 'noticiaPolitica.html', {'noticias': noticias_politica})
