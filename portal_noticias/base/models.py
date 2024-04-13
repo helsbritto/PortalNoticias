@@ -1,4 +1,5 @@
 from django.db import models
+import uuid
 
 # Create your models here.
 class Cadastro(models.Model):
@@ -20,12 +21,15 @@ class Noticia(models.Model):
         ('ESP', 'Esportes'),
         ('ENTR', 'Entretenimento'),
     )
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=True)
     titulo = models.CharField(max_length=255)
     categoria = models.CharField(max_length=20, choices=CATEGORIA_NOTICIAS)
     imagem = models.ImageField(upload_to='imagens')
     conteudo = models.TextField()
+
     def __str__(self):
         return self.titulo
+    
     class Meta:
         verbose_name = 'Notícia'
         verbose_name_plural = 'Notícias'

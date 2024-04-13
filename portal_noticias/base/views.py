@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse 
 from base.forms import CadastroForm, NoticiaForm
 from base.models import Cadastro, Noticia
@@ -21,6 +21,10 @@ def cadastro(request):
 
 def noticia(request):
     return render(request, 'noticia.html')
+
+def detalhes_noticia(request, noticia_uuid):
+    noticia = get_object_or_404(Noticia, id=noticia_uuid)
+    return render(request, 'detalhes_noticia.html', {'noticia': noticia})
 
 def listar_noticias_politica():
     noticias_politica = Noticia.objects.filter(categoria='PL')

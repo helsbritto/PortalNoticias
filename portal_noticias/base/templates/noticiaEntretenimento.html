@@ -59,9 +59,13 @@
                 <div class="row justify-content-center"> <!-- Adiciona a classe justify-content-center para centralizar os itens -->
                     <div class="col-md-6 mb-4"> <!-- Define o tamanho da coluna -->
                         <div class="card bg-light text-dark">
-                            <img src="{{ noticia.imagem.url }}" class="card-img-top mx-auto d-block" alt="Imagem da Notícia"/> <!-- Adiciona as classes mx-auto e d-block para centralizar a imagem -->
+                            <a href="{% url 'detalhes_noticia' noticia.id %}"> <!-- Link para os detalhes da notícia -->
+                                <img src="{{ noticia.imagem.url }}" class="card-img-top mx-auto d-block" alt="Imagem da Notícia"/> <!-- Adiciona as classes mx-auto e d-block para centralizar a imagem -->
+                            </a>
                             <div class="card-body">
-                                <h5 class="card-title">{{ noticia.titulo }}</h5>
+                                <h5 class="card-title">
+                                    <a href="{% url 'detalhes_noticia' noticia.id %}" class="text-decoration-none text-dark">{{ noticia.titulo }}</a> <!-- Link para os detalhes da notícia -->
+                                </h5>
                                 <p class="card-text">{{ noticia.conteudo }}</p>
                                 <p class="card-text">{{ noticia.categoria }}</p>
                             </div>
@@ -92,15 +96,4 @@
     </form>
 </aside>
 
-<footer class="text-center py-3">
-    <p>&copy; 2024 Hels News</p>
-</footer>
-
-<!-- Bootstrap JS (opcional) -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="/static/bootstrap.bundle.min.js"></script>
-</body>
-
-
-
-</html> 
+<footer class
